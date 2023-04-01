@@ -10,7 +10,7 @@
         </layout>
     </appender>
 
-    <logger name="com.njonecompany.web" level="debug"
+    <logger name="com.cicd.web" level="debug"
             additivity="false">
         <appender-ref ref="STDOUT"/>
     </logger>
