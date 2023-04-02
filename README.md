@@ -2,12 +2,15 @@
 
 Docker Jenkins CI/CD
 
+- - -
+
 # 도커 명령어
 docker ps
 docker container exec -it 'docker container id를 입력' bash
 
 ![image](https://user-images.githubusercontent.com/47144594/229289296-2bc907ee-9594-4e01-9e98-9f47278e5296.png)
 
+- - -
 
 # git 설정
 - git 저장소 확인
@@ -28,6 +31,8 @@ docker container exec -it 'docker container id를 입력' bash
 # 빌드 방식
 - clean, complile, package
 ![image](https://user-images.githubusercontent.com/47144594/229289177-ac911690-960b-4c79-9b20-2a1b9d765419.png)
+
+- - -
 
 # pipeline
 - plugin : delivery pipeline
@@ -58,6 +63,8 @@ pipeline {
 
 2. 생성하던 프로젝트 설정으로 돌아와서 스크립트를 넣어준다.
 ![image](https://user-images.githubusercontent.com/47144594/229342350-ead88e2f-2427-41e0-8562-07b589b05a71.png)
+
+- - -
 
 * 권한 문제
 - 스크립트에 의한 파일 실행 권한이 없으므로 파일을 실행할때 권한 문제가 발생된다.
