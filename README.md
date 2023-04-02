@@ -23,7 +23,6 @@ docker container exec -it 'docker container id를 입력' bash
 - 127.0.0.1 이 아닌 WAS(tomcat)이 있는 서버의 아이피
 ![image](https://user-images.githubusercontent.com/47144594/229289048-8c0fcad4-f3a3-43d1-be9e-8d159ae006d4.png)
 
-
 # 자동 빌드
 - 스케줄러에 따라 git에서 변경사항이 있는 경우 빌드 및 배포
 ![image](https://user-images.githubusercontent.com/47144594/229289142-2d518bc3-0e73-4526-b6a6-f9dd4a8a8ae4.png)
@@ -66,20 +65,20 @@ pipeline {
 
 - - -
 
-* 권한 문제
+# 권한 문제
 - 스크립트에 의한 파일 실행 권한이 없으므로 파일을 실행할때 권한 문제가 발생된다.
 
-1. 에러
+## 1. 에러
 -  ./pipelineScript/build.sh: Permission denied 권한이 없다는 에러가 발생
 ![image](https://user-images.githubusercontent.com/47144594/229343710-b41dd5dc-9c37-4a5a-92c3-d540c1c140ca.png)
 
-2. 권한 확인
+## 2. 권한 확인
 서버에서 확인해보니 해당 파일에 실행권한이 없었다.
 경로 : /var/jenkins_home/workspace/My-Second-Pipeline
 파일 : .sh
 ![image](https://user-images.githubusercontent.com/47144594/229343745-de6047d1-36b9-48fa-9831-a89a00041a9d.png)
 
-3. 권한 부여
+## 3. 권한 부여
 - 해당 파일이 있는 경로에서 git 명령어 실행
 
 ```
@@ -94,9 +93,9 @@ pipeline {
 (참고 : https://stackoverflow.com/questions/42154912/permission-denied-for-build-sh-file)
 ![image](https://user-images.githubusercontent.com/47144594/229343805-9717fe79-350c-4d1c-9491-aac5deda8bcc.png)
 
-4. Pipeline project 에서 '지금 빌드' 실행
+## 4. Pipeline project 에서 '지금 빌드' 실행
 
-5. 권한 재확인
+## 5. 권한 재확인
  - 권한은 정상적으로 부여되고 실행도 정상적으로 실행된다.
 ![image](https://user-images.githubusercontent.com/47144594/229343909-19717ab6-f831-4851-b8ae-c5a001082ad0.png)
 
