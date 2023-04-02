@@ -9,6 +9,7 @@ Docker Jenkins CI/CD
 ```
 docker image ls
 ```
+
     * 컨테이너 목록 확인
 ```
 docker container ls
