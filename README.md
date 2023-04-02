@@ -10,6 +10,8 @@ docker container exec -it 'docker container id를 입력' bash
 
 
 #git 설정
+- git 저장소 확인
+- branch 이름 확인
 ![image](https://user-images.githubusercontent.com/47144594/229289097-fadb54a3-eb6c-4dfa-9f4d-f8e090f34949.png)
 
 
