@@ -59,4 +59,37 @@ pipeline {
 2. 생성하던 프로젝트 설정으로 돌아와서 스크립트를 넣어준다.
 ![image](https://user-images.githubusercontent.com/47144594/229342350-ead88e2f-2427-41e0-8562-07b589b05a71.png)
 
+#권한 문제
+- 스크립트에 의한 파일 실행 권한이 없으므로 파일을 실행할때 권한 문제가 발생된다.
+1. 에러
+-  ./pipelineScript/build.sh: Permission denied 권한이 없다는 에러가 발생
+![image](https://user-images.githubusercontent.com/47144594/229343710-b41dd5dc-9c37-4a5a-92c3-d540c1c140ca.png)
+
+2. 권한 확인
+서버에서 확인해보니 해당 파일에 실행권한이 없었다.
+경로 : /var/jenkins_home/workspace/My-Second-Pipeline
+파일 : .sh
+![image](https://user-images.githubusercontent.com/47144594/229343745-de6047d1-36b9-48fa-9831-a89a00041a9d.png)
+
+3. 권한 부여
+- 해당 파일이 있는 경로에서 git 명령어 실행
+git update-index --add --chmod=+x build.sh
+git update-index --add --chmod=+x deploy.sh
+git update-index --add --chmod=+x quality.sh
+git update-index --add --chmod=+x unit.sh
+
+git commit -m "Make build.sh executable" 
+
+git push -u origin master
+
+(참고 : https://stackoverflow.com/questions/42154912/permission-denied-for-build-sh-file)
+![image](https://user-images.githubusercontent.com/47144594/229343805-9717fe79-350c-4d1c-9491-aac5deda8bcc.png)
+
+4. Pipeline project 에서 '지금 빌드' 실행
+
+5. 권한 재확인
+ - 권한은 정상적으로 부여되고 실행도 정상적으로 실행된다.
+![image](https://user-images.githubusercontent.com/47144594/229343909-19717ab6-f831-4851-b8ae-c5a001082ad0.png)
+
+
 
