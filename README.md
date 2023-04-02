@@ -4,6 +4,21 @@ Docker Jenkins CI/CD
 
 # 도커 설치
 
+* Docker 명령어
+    * 이미지 목록 확인
+```
+docker image ls
+```
+    * 컨테이너 목록 확인
+```
+docker container ls
+```
+
+    * 네트워크 목록 확인
+```
+docker network ls 
+```
+
 # 도커 Jenkins 설치
 1. jenkins 설치
 - https://github.com/jenkinsci/docker (github)
