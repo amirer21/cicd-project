@@ -75,14 +75,15 @@ pipeline {
 3. 권한 부여
 - 해당 파일이 있는 경로에서 git 명령어 실행
 
+git 명령어
+
     git update-index --add --chmod=+x build.sh
     git update-index --add --chmod=+x deploy.sh
     git update-index --add --chmod=+x quality.sh
     git update-index --add --chmod=+x unit.sh
-
     git commit -m "Make build.sh executable" 
-
     git push -u origin master
+    
 
 (참고 : https://stackoverflow.com/questions/42154912/permission-denied-for-build-sh-file)
 ![image](https://user-images.githubusercontent.com/47144594/229343805-9717fe79-350c-4d1c-9491-aac5deda8bcc.png)
