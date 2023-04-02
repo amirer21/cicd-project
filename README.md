@@ -2,7 +2,39 @@
 
 Docker Jenkins CI/CD
 
+도커 설치
+
+도커 Jenkins 설치
+https://github.com/jenkinsci/docker (github)
+https://www.jenkins.io/download/ 에서 docker 항목으로 이동
+https://hub.docker.com/r/jenkins/jenkins 
+
+이미지 다운로드
+```
+docker pull jenkins/jenkins
+```
+
+Jenkins 실행
+port 변경(컨테이너 외부 호출 : 컨테이너 내부 호출), name(이름 설정, 설정안하는 경우 임의 생성), restart(fail이라면 restart)
+-d(터미널 사용을 위해 백그라운드 데몬 형태로 실행)
+
+```
+docker run -d -p 8080:8080 -p 50000:50000 --name jenkins-server --restart=on-failure jenkins/jenkins:lts-jdk11
+```
+
+Jenkins 초기 접속
+http://127.0.0.1:8080
+Administrator password
+
+컨테이너 내 파일 확인
+Docker 컨테이너에 직접 접속해서 파일을 확인할 수도 있다
+도커가 설치된 경로 (윈도우)
+```
+C:\WINDOWS\system32>docker exec jenkins-server cat /var/jenkins_home/secrets/initialAdminPassword
+```
+
 - - -
+
 
 # 도커 명령어
 
