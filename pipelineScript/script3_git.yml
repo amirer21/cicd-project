@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+    stages {
+        stage('Git clone') {
+            steps {
+                git 'https://github.com/amirer21/cicd-project';
+            }
+        }
+
+        stage('Compile') {
+            steps {
+                echo "Compiled successfully!";
+                sh './pipelineScript/build.sh'
+            }
+        }
+
+        stage('JUnit') {
+            steps {
+                echo "JUnit passed successfully!";
+                sh './pipelineScript/unit.sh'
+            }
+        }
+
+        stage('Code Analysis') {
+            steps {
+                echo "Code Analysis completed successfully!";
+                sh './pipelineScript/quality.sh'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "Deployed successfully!";
+                sh './pipelineScript/deploy.sh'
+            }
+        }
+    }
+}
