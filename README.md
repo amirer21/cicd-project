@@ -5,8 +5,11 @@ Docker Jenkins CI/CD
 - - -
 
 # 도커 명령어
+
+'''
 docker ps
 docker container exec -it 'docker container id를 입력' bash
+'''
 
 ![image](https://user-images.githubusercontent.com/47144594/229289296-2bc907ee-9594-4e01-9e98-9f47278e5296.png)
 
@@ -38,6 +41,8 @@ docker container exec -it 'docker container id를 입력' bash
 - 각각의 job에서 빌드 후 조치 : Build other projects > Trigger only if build is stable
 
 # pipe-line script
+
+'''
 pipeline {
     agent any //실행가능한 어느 서버에서든 pipeline 실행
     stages {
@@ -52,6 +57,7 @@ pipeline {
         }
     }
 }
+'''
 
 # pipeline Git 가져오기
 1. Pipeline project 생성 및 Pipeline Syntax
@@ -74,8 +80,12 @@ pipeline {
 
 ## 2. 권한 확인
 서버에서 확인해보니 해당 파일에 실행권한이 없었다.
+
+'''
 경로 : /var/jenkins_home/workspace/My-Second-Pipeline
 파일 : .sh
+'''
+
 ![image](https://user-images.githubusercontent.com/47144594/229343745-de6047d1-36b9-48fa-9831-a89a00041a9d.png)
 
 ## 3. 권한 부여
