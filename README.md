@@ -75,7 +75,7 @@ pipeline {
 3. 권한 부여
 - 해당 파일이 있는 경로에서 git 명령어 실행
 
-git 명령어
+    * git 명령어
 
     git update-index --add --chmod=+x build.sh
     git update-index --add --chmod=+x deploy.sh
