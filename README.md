@@ -69,6 +69,62 @@ pipeline {
 2. 생성하던 프로젝트 설정으로 돌아와서 스크립트를 넣어준다.
 ![image](https://user-images.githubusercontent.com/47144594/229342350-ead88e2f-2427-41e0-8562-07b589b05a71.png)
 
+# Pipeline Dash board (Stage view)
+
+- stages에 설정한 대로 stage view 에 노출이 된다.
+
+```
+pipeline {
+    agent any
+    stages {
+        stage('Compile') {
+            steps {
+                echo "Compiled successfully!";
+            }
+        }
+
+        stage('JUnit') {
+            steps {
+                echo "JUnit passed successfully!";
+            }
+        }
+
+        stage('Code Analysis') {
+            steps {
+                echo "Code Analysis completed successfully!";
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "Deployed successfully!";
+            }
+        }
+    }
+
+    post {
+      always {
+        echo "This will always run"
+      }
+      success {
+        echo "This will run when the run finished successfully"
+      }
+      failure {
+        echo "This will run if failed"
+      }
+      unstable {
+        echo "This will run when the run was marked as unstable"
+      }
+      changed {
+        echo "This will run when the state of the pipeline has changed"
+      }
+    }
+}
+```
+
+![image](https://user-images.githubusercontent.com/47144594/229356342-0cd64d10-0da2-4605-80cf-e3d0c5eb6e1a.png)
+
+
 - - -
 
 # 권한 문제
