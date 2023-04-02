@@ -17,11 +17,11 @@ https://tomcat.apache.org (9.x 버전 사용)
                redirectPort="8443" />
 ```
 
-- 접근 엑세스 변경 
-경로 : %TOMCAT_HOME%\webapps\manager\META-INF\context.xml 
-경로 : %TOMCAT_HOME%\webapps\host-manager\META-INF\context.xml 
+- 접근 엑세스 변경
+- 경로 : %TOMCAT_HOME%\webapps\manager\META-INF\context.xml 
+- 경로 : %TOMCAT_HOME%\webapps\host-manager\META-INF\context.xml 
 
-주석처리
+다음 코드를 주석처리 한다.
 ```
   <!-- <Valve className="org.apache.catalina.valves.RemoteAddrValve"
          allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /> -->
