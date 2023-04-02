@@ -2,6 +2,43 @@
 
 Docker Jenkins CI/CD
 
+# JDK 설치
+OpenJDK 설치 - https://jdk.java.net/11/
+
+# Tomcat 설치
+https://tomcat.apache.org (9.x 버전 사용)
+
+- Tomcat 설정 변경
+- 포트 변경 
+경로 : %TOMCAT_HOME%\conf\server.xml
+```
+    <Connector port="8088" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+```
+
+- 접근 엑세스 변경 
+경로 : %TOMCAT_HOME%\webapps\manager\META-INF\context.xml 
+경로 : %TOMCAT_HOME%\webapps\host-manager\META-INF\context.xml 
+
+주석처리
+```
+  <!-- <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /> -->
+```
+
+- 유저 추가
+%TOMCAT_HOME%\conf\tomcat-users.xml
+```
+  <role rolename="manager-gui"/>
+  <role rolename="manager-script"/>
+  <role rolename="manager-jxm"/>
+  <role rolename="manager-status"/>
+  <user username="admin" password="admin" roles="manager-gui, manager-script, manager-jxm, manager-status"/>
+  <user username="deployer" password="deployer" roles="manager-script"/>
+  <user username="tomcat" password="tomcat" roles="manager-gui"/>
+```
+
 # 도커 설치
 
 - Docker 명령어
