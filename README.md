@@ -48,3 +48,15 @@ pipeline {
         }
     }
 }
+
+#pipeline Git 가져오기
+1. Pipeline project 생성 및 Pipeline Syntax
+  (1) item 생성 >Pipeline (project) > 하단 Pipeline scirpt > Pipeline Syntax
+  (2) Steps > git: Git 선택 > Repository, Branch, 입력 & Generate Pipeline Script
+      -> 생성된 git command를 다음에 복사
+![image](https://user-images.githubusercontent.com/47144594/229342278-f1279433-b3ef-4f4a-a4dd-940ee85011d9.png)
+
+2. 생성하던 프로젝트 설정으로 돌아와서 스크립트를 넣어준다.
+![image](https://user-images.githubusercontent.com/47144594/229342350-ead88e2f-2427-41e0-8562-07b589b05a71.png)
+
+
