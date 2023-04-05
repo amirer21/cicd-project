@@ -5,8 +5,7 @@ pipeline {
     }
     stages {
         stage('github clone') {
-            steps {
-                //git branch: 'main', url: 'https://github.com/amirer21/cicd-project.git'; 
+            steps {                
                 git 'https://github.com/amirer21/cicd-project'
             }
         }
