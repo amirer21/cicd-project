@@ -1,5 +1,7 @@
 # Docker Jenkins CI/CD (Java Maven Web Project)
 
+--------
+
 * 순서
     * JDK 설치
     * Tomcat 설치 및 설정
@@ -8,8 +10,12 @@
     * Jenkins 빌드 및 배포
     * Jenkins Pipeline (View, Script, Git Script)
 
+--------
+
 # JDK 설치
 OpenJDK 설치 - https://jdk.java.net/11/
+
+--------
 
 # Tomcat 설치
 https://tomcat.apache.org (9.x 버전 사용)
@@ -45,6 +51,9 @@ https://tomcat.apache.org (9.x 버전 사용)
   <user username="tomcat" password="tomcat" roles="manager-gui"/>
 ```
 
+--------
+
+
 # 도커 설치
 
 - Docker 명령어
@@ -62,6 +71,9 @@ docker container ls
 ```
 docker network ls 
 ```
+
+--------
+
 
 # 도커 Jenkins 설치
 1. jenkins 설치
@@ -127,6 +139,9 @@ docker container exec -it 'docker container id를 입력' bash
 ![image](https://user-images.githubusercontent.com/47144594/229289177-ac911690-960b-4c79-9b20-2a1b9d765419.png)
 
 - - -
+
+--------
+
 
 # pipeline
 - plugin : delivery pipeline
@@ -230,6 +245,9 @@ pipeline {
 ![image](https://user-images.githubusercontent.com/47144594/229356342-0cd64d10-0da2-4605-80cf-e3d0c5eb6e1a.png)
 
 
+--------
+
+
 - - -
 
 # 권한 문제
@@ -270,6 +288,7 @@ pipeline {
  - 권한은 정상적으로 부여되고 실행도 정상적으로 실행된다.
 ![image](https://user-images.githubusercontent.com/47144594/229343909-19717ab6-f831-4851-b8ae-c5a001082ad0.png)
 
+--------
 
 # Sciprt (maven build)
 ```
