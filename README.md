@@ -1,6 +1,12 @@
-# cicd-project
+# Docker Jenkins CI/CD (Java Maven Web Project)
 
-Docker Jenkins CI/CD
+# 순서
+## JDK 설치
+## Tomcat 설치 및 설정
+## Docker 
+## Jenkins(Docker) 
+## Jenkins 빌드 및 배포
+## Jenkins Pipeline (View, Script, Git Script)
 
 # JDK 설치
 OpenJDK 설치 - https://jdk.java.net/11/
