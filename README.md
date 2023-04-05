@@ -1,8 +1,8 @@
 # Docker Jenkins CI/CD (Java Maven Web Project)
 
-# * 순서
-## JDK 설치
-## Tomcat 설치 및 설정
+* 순서
+    * JDK 설치
+    * Tomcat 설치 및 설정
 ## Docker 
 ## Jenkins(Docker) 
 ## Jenkins 빌드 및 배포
