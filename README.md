@@ -126,7 +126,20 @@ docker container exec -it 'docker container id를 입력' bash
 - plugin : delivery pipeline
 - 각각의 job에서 빌드 후 조치 : Build other projects > Trigger only if build is stable
 
-# pipe-line script
+
+# Delivery Pipeline (View DashBoard)
+
+ (1) My Views 라는 메뉴가 생성된다.
+![image](https://user-images.githubusercontent.com/47144594/229983172-4c30e3d2-b9ae-4a79-b9f7-9bef45b9bb33.png)
+
+ (2) 새로운 View 추가 및 설정
+ - pipeline component : 이름 설정, 초기 실행 JOB 설정을 할 수 있다. 
+![image](https://user-images.githubusercontent.com/47144594/229983228-f5827b45-bda9-4367-9646-07461c659dca.png)
+
+ (3) 생성된 View 확인
+ ![image](https://user-images.githubusercontent.com/47144594/229983329-c808aa05-b01a-4fd3-af14-55f0e1451b1b.png)
+
+# pipe-line Script 작성하기
 
 ```
 pipeline {
@@ -145,7 +158,7 @@ pipeline {
 }
 ```
 
-# pipeline Git 가져오기
+# pipeline Git에서 Script 가져와서 실행하기
 1. Pipeline project 생성 및 Pipeline Syntax
   (1) item 생성 >Pipeline (project) > 하단 Pipeline scirpt > Pipeline Syntax
   (2) Steps > git: Git 선택 > Repository, Branch, 입력 & Generate Pipeline Script
