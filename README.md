@@ -252,4 +252,28 @@ pipeline {
 ![image](https://user-images.githubusercontent.com/47144594/229343909-19717ab6-f831-4851-b8ae-c5a001082ad0.png)
 
 
-
+# Sciprt (maven build)
+```
+pipeline {
+    agent any
+    tools { 
+      maven 'Maven3.8.5' // Jenkins > manage > configureTools 에서 Maven 항목을 열어보면 버전을 확인할 수 있다.
+    }
+    stages {
+        stage('github clone') {
+            steps {                
+                git 'https://github.com/amirer21/cicd-project' // 해당 items에서 > Configure > 하단에 Pipeline Syntax > Step항목 Git Repository, branch를 넣고 Generate
+            }
+        }
+        
+        stage('build') {
+            steps {
+                sh '''
+                    echo build start
+                    mvn clean compile package -DskipTests=true
+                '''
+            }
+        }
+    }
+}
+```
